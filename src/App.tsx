@@ -1,28 +1,46 @@
 import React, { Component } from "react";
-import { Button, StyleSheet, View } from "react-native";
+import { Button, StyleSheet, View,TextInput,Text } from "react-native";
 import { Entry } from "./Entry";
 
-// const Link = props => (
-//   <Text
-//     {...props}
-//     accessibilityRole="link"
-//     style={StyleSheet.compose(
-//       styles.link,
-//       props.style
-//     )}
-//   />
-// );
+const Link = props => (
+  <Text
+    {...props}
+    accessibilityRole="link"
+    style={StyleSheet.compose(
+      styles.link,
+      props.style
+    )}
+    stat
+  />
+);
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+    }
+  }
   _onPressButton() {
-    console.log("tescik");
-    alert("You tapped the button!");
+    console.log(this.state.password);
+    //alert("You tapped the button!" + this.state.username+ " "+this.state.password);
+  
   }
   render() {
     return (
       <View style={styles.app}>
-        <Entry name="Login" />
-        <Entry name="Password" />
+        <Text style={styles.text}>Login</Text>
+        <TextInput
+          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+          onChangeText={(text) => {this.setState({username:text});}}
+         
+        />
+        <Text style={styles.text}>Password</Text>
+        <TextInput
+          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+          onChangeText={(text) => {this.setState({password:text});}}
+        />
         <Button
           onPress={this._onPressButton}
           title="Logowanie"
