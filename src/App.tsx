@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <View style={styles.app}>
-        <Text style={styles.text}>Login</Text>
+        <Text style={styles.text}>Tak testowo Login</Text>
         <TextInput
           style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
           onChangeText={(text) => {this.setState({username:text});}}
