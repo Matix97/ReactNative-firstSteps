@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, View } from "react-native";
 import { Entry } from "./Entry";
 
 // const Link = props => (
@@ -14,19 +14,31 @@ import { Entry } from "./Entry";
 // );
 
 class App extends Component {
+  _onPressButton() {
+    console.log("tescik");
+    alert("You tapped the button!");
+  }
   render() {
     return (
       <View style={styles.app}>
         <Entry name="Login" />
         <Entry name="Password" />
-        <br />
-        <Button onPress={() => {}} title="Logowanie" />
+        <Button
+          onPress={this._onPressButton}
+          title="Logowanie"
+          style={styles.butt}
+        />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  butt: {
+    //choja tam nie działa
+    marginVertical: "100em",
+    lineHeight: "600em"
+  },
   app: {
     marginHorizontal: "auto",
     maxWidth: 500
