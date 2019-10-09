@@ -2,22 +2,25 @@ import React, { Component } from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import { Entry } from "./Entry";
 
-const Link = props => (
-  <Text
-    {...props}
-    accessibilityRole="link"
-    style={StyleSheet.compose(
-      styles.link,
-      props.style
-    )}
-  />
-);
+// const Link = props => (
+//   <Text
+//     {...props}
+//     accessibilityRole="link"
+//     style={StyleSheet.compose(
+//       styles.link,
+//       props.style
+//     )}
+//   />
+// );
 
 class App extends Component {
   render() {
     return (
       <View style={styles.app}>
-        <Entry name="test" />
+        <Entry name="Login" />
+        <Entry name="Password" />
+        <br />
+        <Button onPress={() => {}} title="Logowanie" />
       </View>
     );
   }
