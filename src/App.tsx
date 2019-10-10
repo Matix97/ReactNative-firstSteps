@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, StyleSheet, View,TextInput,Text } from "react-native";
+import { Button, StyleSheet, View, TextInput, Text } from "react-native";
 import { Entry } from "./Entry";
 
 const Link = props => (
@@ -18,14 +18,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
-    }
+      username: "",
+      password: ""
+    };
   }
-  _onPressButton() {
-    console.log(this.state.password);
+  _onPressButton(pass, name) {
+    console.log(pass + " to to: " + name);
     //alert("You tapped the button!" + this.state.username+ " "+this.state.password);
-  
   }
   render() {
     return (
@@ -33,16 +32,24 @@ class App extends Component {
         <Text style={styles.text}>Tak testowo Login</Text>
         <TextInput
           style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-          onChangeText={(text) => {this.setState({username:text});}}
-         
+          onChangeText={text => {
+            this.setState({ username: text });
+          }}
         />
         <Text style={styles.text}>Password</Text>
         <TextInput
           style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-          onChangeText={(text) => {this.setState({password:text});}}
+          onChangeText={text => {
+            this.setState({ password: text });
+          }}
         />
         <Button
-          onPress={this._onPressButton}
+          //onPress={(username,password)=>this._onPressButton(username,password)}
+          onPress={this._onPressButton.bind(
+            this,
+            this.state.username,
+            this.state.password
+          )}
           title="Logowanie"
           style={styles.butt}
         />
