@@ -16,7 +16,6 @@ export class Entry extends Component {
           onChangeText={text => {
             this.setState({ text });
           }}
-          //value={this.state.text}
         />
       </View>
     );
