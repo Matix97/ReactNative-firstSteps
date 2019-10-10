@@ -22,8 +22,15 @@ class App extends Component {
       password: ""
     };
   }
-  _onPressButton(pass, name) {
-    console.log(pass + " to to: " + name);
+  _onPressButton(name, pass) {
+    console.log("name: " + name + " pass: " + pass);
+    if (name === "admin" && pass === "admin") {
+      //new page
+      alert("Correct password and usernmae");
+    } else {
+      //error page
+      alert("Incorrect password or username or both");
+    }
     //alert("You tapped the button!" + this.state.username+ " "+this.state.password);
   }
   render() {
